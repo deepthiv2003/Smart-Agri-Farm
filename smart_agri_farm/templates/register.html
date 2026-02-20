@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow">
+            <div class="card-body">
+                <h3 class="text-center mb-4">Register New Farmer</h3>
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Full Name">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Username">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Village">
+                    </div>
+                    <button class="btn btn-success w-100">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

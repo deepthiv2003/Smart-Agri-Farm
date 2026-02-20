@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Crop Prediction{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="card shadow-lg border-0">
+            <div class="card-header bg-success text-white text-center py-4">
+                <h2 class="mb-2">
+                    <i class="fas fa-seedling me-3"></i>
+                    AI Crop Recommendation System
+                </h2>
+                <p class="mb-0">99%+ Accurate - Trained on 2200+ samples</p>
+            </div>
+            <div class="card-body p-5">
+                <form method="POST">
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">Nitrogen (N) kg/ha</label>
+                            <input type="number" class="form-control form-control-lg" name="N" 
+                                   value="90" min="0" max="200" step="1" required>
+                            <small class="text-muted">Soil Nitrogen level</small>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">Phosphorus (P) kg/ha</label>
+                            <input type="number" class="form-control form-control-lg" name="P" 
+                                   value="42" min="0" max="200" step="1" required>
+                            <small class="text-muted">Soil Phosphorus level</small>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">Potassium (K) kg/ha</label>
+                            <input type="number" class="form-control form-control-lg" name="K" 
+                                   value="43" min="0" max="200" step="1" required>
+                            <small class="text-muted">Soil Potassium level</small>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">Temperature (°C)</label>
+                            <input type="number" class="form-control form-control-lg" name="temperature" 
+                                   value="20.8" min="10" max="45" step="0.1" required>
+                            <small class="text-muted">Current temperature</small>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">Humidity (%)</label>
+                            <input type="number" class="form-control form-control-lg" name="humidity" 
+                                   value="82" min="20" max="100" step="0.1" required>
+                            <small class="text-muted">Relative humidity</small>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label fw-bold">Soil pH</label>
+                            <input type="number" class="form-control form-control-lg" name="ph" 
+                                   value="6.5" min="3" max="10" step="0.1" required>
+                            <small class="text-muted">Soil acidity level</small>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-bold">Rainfall (mm)</label>
+                            <input type="number" class="form-control form-control-lg" name="rainfall" 
+                                   value="202.9" min="10" max="300" step="1" required>
+                            <small class="text-muted">Expected rainfall</small>
+                        </div>
+                    </div>
+                    <div class="text-center mt-5">
+                        <button type="submit" class="btn btn-success btn-lg px-5 py-3 fw-bold shadow-lg">
+                            <i class="fas fa-rocket me-3"></i>
+                            Predict Best Crop
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

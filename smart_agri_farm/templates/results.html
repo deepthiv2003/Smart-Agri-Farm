@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block title %}Prediction Results{% endblock %}
+{% block content %}
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="alert alert-success text-center shadow-lg" role="alert">
+            <i class="fas fa-check-circle fa-4x mb-4 text-success"></i>
+            <h1 class="display-3 fw-bold mb-4">{{ crop|upper }}</h1>
+            <div class="alert alert-primary shadow">
+                <h2 class="mb-0">
+                    <i class="fas fa-chart-line me-2"></i>
+                    {{ "%.1f"|format(confidence) }}% Confidence
+                </h2>
+            </div>
+            <p class="lead mt-3">This is the best crop for your farm conditions!</p>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 mb-5">
+    <div class="col-md-8">
+        <div class="card shadow border-0 h-100">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="fas fa-chart-bar me-2"></i>Input Parameters Summary</h5>
+            </div>
+            <div class="card-body">
+                <div class="row text-center g-4">
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded">
+                            <h4 class="text-success fw-bold">{{ N }}</h4>
+                            <p class="mb-0"><small>Nitrogen (kg/ha)</small></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded">
+                            <h4 class="text-primary fw-bold">{{ P }}</h4>
+                            <p class="mb-0"><small>Phosphorus (kg/ha)</small></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded">
+                            <h4 class="text-warning fw-bold">{{ K }}</h4>
+                            <p class="mb-0"><small>Potassium (kg/ha)</small></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded">
+                            <h4 class="text-danger fw-bold">{{ "%.1f"|format(temp) }}</h4>
+                            <p class="mb-0"><small>Temperature (°C)</small></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded">
+                            <h4 class="text-info fw-bold">{{ "%.1f"|format(humidity) }}</h4>
+                            <p class="mb-0"><small>Humidity (%)</small></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-3 border rounded">
+                            <h4 class="text-secondary fw-bold">{{ "%.1f"|format(ph) }}</h4>
+                            <p class="mb-0"><small>Soil pH</small></p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4">
+                <div class="text-center">
+                    <h5 class="text-primary">
+                        <i class="fas fa-cloud-rain me-2"></i>
+                        Rainfall: <span class="fw-bold">{{ rainfall }} mm</span>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow border-0 h-100 bg-light">
+            <div class="card-body text-center p-4">
+                <i class="fas fa-lightbulb fa-3x text-warning mb-4"></i>
+                <h5 class="fw-bold mb-3">Farming Tips</h5>
+                <ul class="list-unstyled text-start">
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Optimal crop for current conditions</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>High yield expected</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Matches soil NPK perfectly</li>
+                    <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Climate suitable</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center">
+    <a href="{{ url_for('predict') }}" class="btn btn-success btn-lg px-5 me-3 shadow-lg">
+        <i class="fas fa-redo me-2"></i>New Prediction
+    </a>
+    <a href="{{ url_for('dashboard') }}" class="btn btn-outline-primary btn-lg px-5 shadow-lg">
+        <i class="fas fa-home me-2"></i>Dashboard
+    </a>
+</div>
+{% endblock %}

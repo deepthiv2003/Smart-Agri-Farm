@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Login - Smart Agri{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+        <div class="card shadow-lg border-0">
+            <div class="card-body p-5">
+                <div class="text-center mb-4">
+                    <i class="fas fa-seedling fa-3x text-success mb-3"></i>
+                    <h2 class="fw-bold">Smart Agri Farm</h2>
+                    <p class="text-muted">Mysuru Farmers Portal</p>
+                </div>
+                <form method="POST">
+                    <div class="mb-4">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <input type="text" class="form-control" name="username" placeholder="Username" required>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            <input type="password" class="form-control" name="password" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100 py-3 fw-bold">
+                        <i class="fas fa-sign-in-alt me-2"></i>Login
+                    </button>
+                </form>
+                <div class="mt-4 text-center">
+                    <div class="d-flex justify-content-between">
+                        <small>admin / admin123</small>
+                        <small>farmer1 / 1234</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

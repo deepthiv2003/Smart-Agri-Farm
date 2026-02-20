@@ -1,0 +1,58 @@
+body.bg-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.card {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.navbar-brand {
+    font-weight: 700 !important;
+    font-size: 1.8rem !important;
+}
+
+.btn {
+    border-radius: 12px;
+    font-weight: 500;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.display-3 {
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.form-control, .form-control-lg {
+    border-radius: 12px;
+    border: 2px solid #e9ecef;
+    padding: 15px;
+    font-size: 1.1rem;
+}
+
+.form-control:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+}
+
+.alert {
+    border-radius: 15px;
+    border: none;
+}

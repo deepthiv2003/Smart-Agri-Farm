@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}Rainfall Forecast{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-10">
+        <div class="card shadow-lg border-0">
+            <div class="card-header bg-primary text-white text-center py-4">
+                <h2 class="mb-2">
+                    <i class="fas fa-cloud-rain me-3"></i>
+                    Karnataka Rainfall Forecast
+                </h2>
+                <p class="mb-0">Based on 1901-2015 Historical Data</p>
+            </div>
+            <div class="card-body p-4">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Month</th>
+                                <th>Normal (mm)</th>
+                                <th>Prediction (mm)</th>
+                                <th>Change</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>January</strong></td>
+                                <td>22.5</td>
+                                <td>25.8</td>
+                                <td><span class="text-success">+15%</span></td>
+                                <td><span class="badge bg-success">Good</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>February</strong></td>
+                                <td>20.1</td>
+                                <td>18.3</td>
+                                <td><span class="text-danger">-9%</span></td>
+                                <td><span class="badge bg-warning">Dry</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>March</strong></td>
+                                <td>32.4</td>
+                                <td>35.2</td>
+                                <td><span class="text-success">+9%</span></td>
+                                <td><span class="badge bg-success">Good</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>April</strong></td>
+                                <td>78.9</td>
+                                <td>82.1</td>
+                                <td><span class="text-success">+4%</span></td>
+                                <td><span class="badge bg-success">Good</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>May</strong></td>
+                                <td>145.6</td>
+                                <td>152.3</td>
+                                <td><span class="text-success">+5%</span></td>
+                                <td><span class="badge bg-success">Good</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>June</strong></td>
+                                <td>238.7</td>
+                                <td>245.1</td>
+                                <td><span class="text-success">+3%</span></td>
+                                <td><span class="badge bg-success">Excellent</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h6><i class="fas fa-info-circle me-2"></i>Farming Advisory</h6>
+                                <ul class="small">
+                                    <li>June-July: Best monsoon planting</li>
+                                    <li>February: Water conservation needed</li>
+                                    <li>May-June: Peak rainfall expected</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center mt-4">
+    <a href="{{ url_for('dashboard') }}" class="btn btn-primary btn-lg">
+        <i class="fas fa-arrow-left me-2"></i>Back to Dashboard
+    </a>
+</div>
+{% endblock %}
